@@ -24,7 +24,8 @@ namespace OhDeer1
         //Cars is the garage of the list of Car objects
         public List<Car> Cars { get; set; }
         public List<Border> gameBorder { get; set; }
-        public Coin BonusPoints { get; set; } //
+        public Coin BonusPoints { get; set; } 
+        //Tests
         public List<Freeway> Road { get; set; }
         public List<Water> Pond { get; set; }
         public List<Coin> Coins { get; set; }
