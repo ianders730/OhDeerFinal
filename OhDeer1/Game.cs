@@ -51,7 +51,7 @@ namespace OhDeer1
             gameBorder.Add(new Border(Height, Width, 760, 0));
             for (int i = 0; i < gameBorder.Count; i++)
             {
-                //Controls.Add(gameBorder[i]);
+                Controls.Add(gameBorder[i]);
             }
             //D E E R\\
             Deer = new Player(Height, Width, numberOfLives);
