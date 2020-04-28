@@ -86,7 +86,7 @@ namespace OhDeer1
         {
             LocationX = LocationX + 30;
         }
-   
+   //Test 2
 
         //Idea from Demo Derby
         public bool HitTest(Rectangle rectangle)
