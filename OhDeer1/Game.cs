@@ -32,12 +32,13 @@ namespace OhDeer1
         public GrassBackground Background { get; set; }
         public int numberOfLives = 3;
         public int level = 1;
+        private int score = 0;
         public bool isPlaying = true;
         private static Random randomGenerator = new Random();
         private DateTime gameTime = DateTime.Now;
         //Lanes list containts the four y coordinates coorsponding with each lane.
         public List<int> Lanes { get; set; }
-
+        
         //private bool invalidated = true;
 
         //M E T H O D S\\
@@ -255,7 +256,7 @@ namespace OhDeer1
             var roadKill = from vehicle in Cars
                               where vehicle.HitTest(Deer.Bounds)
                               select vehicle;
-                var crashList = roadKill.ToList();
+            var crashList = roadKill.ToList();
             //When a player hits a car, the player is reset to the start point and loses a life.
             //There will also be a message telling the player how many lives they have left.
            foreach (var vehicle in crashList)
@@ -282,12 +283,26 @@ namespace OhDeer1
                GameTimer.Enabled = false;
                RenderOutput();
            }
+            // Tests to see if the player runs into any coins
+            /*var coinsCollected = from tallies in Coins
+                                 where tallies.HitTest(Deer.Bounds)
+                                 select tallies;
+            var totalPoints = coinsCollected.ToList();
+            //Coins add 15 points to total
+            foreach (var tallies in totalPoints)
+            {
+                score = score + 15;
+            }*/
             //The level will increase by one and reset the player when they pass y = 50.
+            //Points will increase by 10 everytime the deer gets to y=50
             //It will also send a message with the new level.
             if (Deer.LocationY < 50)
             {
                 Deer.PlayerReset();
                 level++;
+                score = score + 10;
+                ScoreLabel.Text = score.ToString();
+                LevelLabel.Text = level.ToString();
                 if (level < 4)
                 {
                     MessageBox.Show($"Level {level}");
@@ -329,9 +344,19 @@ namespace OhDeer1
 
             }
 
+            //Tests to see if tthe player ran into any coins
+            CoinsCollection();
+        }
+        // not sure how to add the code to add the score and pick it up
+         private void CoinsCollection()
+        {
+            if (Deer.Bounds.IntersectsWith(BonusPoints.Bounds))
+            {
+                score = score + 15;
+                ScoreLabel.Text = score.ToString();
+            }
 
         }
-
         //G A M E  K E Y  C O N T R O L S
 
         //FOR THE PLAYER TO MOVE IN ALL DIRECTIONS
@@ -374,11 +399,15 @@ namespace OhDeer1
         }
         private void RenderOutput()
         {
+            // Adds to the score 
+            //ScoreLabel.Text = score.ToString();
+
             if (!isPlaying)
             {
                 MessageBox.Show("Game Over");
                 Application.Exit();
             }
+
 
         }
         //Cars restart at x = 1 and change y to one of 4 random numbers(lanes) when they 

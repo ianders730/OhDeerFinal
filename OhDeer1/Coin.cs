@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,18 @@ namespace OhDeer1
             Size = new System.Drawing.Size(10, 10);
             LocationX = locationX;
             LocationY = locationY;
+        }
+
+        /*internal object HitTest(Rectangle bounds)
+        {
+            throw new NotImplementedException();
+        }*/
+        
+        //Idea from Demo Derby
+        public bool HitTest(Rectangle rectangle)
+        {
+            //Tells me whether or not the picturebox of a coin intersects with the player's picturebox.
+            return Bounds.IntersectsWith(rectangle);
         }
     }
 }
