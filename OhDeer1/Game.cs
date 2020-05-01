@@ -104,13 +104,20 @@ namespace OhDeer1
             Controls.Add(Background);
             //G A M E  T I M E R  E N A B L E D\\
             GameTimer.Enabled = true;
-            //c a r 1  E n a b l e d
-            car1.Enabled = true;
+           
             //Restart Level\\
             
         }
 
+
+
+
+
         //G A M E  T I M E R
+
+
+
+
         int randomDelay1 = randomGenerator.Next(0, 1000);
         int randomDelay2 = randomGenerator.Next(1000, 1500);
         int randomDelay3 = randomGenerator.Next(2000, 2200);
@@ -431,11 +438,11 @@ namespace OhDeer1
             
         }
 
-        
-
         private void car1_Tick(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }

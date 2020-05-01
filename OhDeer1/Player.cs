@@ -14,8 +14,6 @@ namespace OhDeer1
         //Represent H/W of form where picturebox will move around on
         public int ParentHeight { get; set; }
         public int ParentWidth { get; set; }
-        public int Lives { get; set; }
-        public int Score { get; set; }
 
         //At top left corner of picturebox
         public int LocationX
@@ -59,7 +57,6 @@ namespace OhDeer1
         
             ParentHeight = parentHeight;
             ParentWidth = parentWidth;
-            Lives = lives;
             //Specified image
             Image = Properties.Resources.Deer5;
             //Makes sure that the picture fits specified boundries
