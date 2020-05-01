@@ -345,10 +345,10 @@ namespace OhDeer1
             }
 
             //Tests to see if tthe player ran into any coins
-            CoinsCollection();
+            //CoinsCollection();
         }
         // not sure how to add the code to add the score and pick it up
-         private void CoinsCollection()
+         /*private void CoinsCollection()
         {
             if (Deer.Bounds.IntersectsWith(BonusPoints.Bounds))
             {
@@ -356,7 +356,7 @@ namespace OhDeer1
                 ScoreLabel.Text = score.ToString();
             }
 
-        }
+        }*/
         //G A M E  K E Y  C O N T R O L S
 
         //FOR THE PLAYER TO MOVE IN ALL DIRECTIONS
