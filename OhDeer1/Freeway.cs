@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace OhDeer1
 {
+
     public class Freeway : PictureBox
     {
 
@@ -60,9 +61,6 @@ namespace OhDeer1
             LocationX = locationX;
             LocationY = locationY;
         }
-        public void Display()
-        {
-
-        }
+        
     }
 }

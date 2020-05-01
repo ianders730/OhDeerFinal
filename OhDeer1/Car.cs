@@ -11,10 +11,9 @@ namespace OhDeer1
     public class Car : PictureBox
     {
         //Properties
-        //public int Level { get; set; }
+        
         public int ParentHeight { get; set; }
         public int ParentWidth { get; set; }
-        //public List<int> Lanes { get; set; }
         //random number generator
         private static Random randomGenerator = new Random();
 
@@ -52,9 +51,8 @@ namespace OhDeer1
                 }
             }
         }
-        //Do we need the Cars to take damage?
-        //public int Damage { get; set; }
-        //If round = 4, speed = 
+        
+
         public int Speed { get; set; }
         //Speed dependent on level somehow?
         //Constructor
